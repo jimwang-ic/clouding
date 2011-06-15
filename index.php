@@ -159,7 +159,7 @@
                 <div id="about-me">
                     <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it´s me!" />
                     <strong>klj</strong><br />
-					<?phpecho 'dadasd';?>
+					<? echo "dsadasd";?>
                     Age: 26<br />
                     Dallas, TX<br />
                     <a href="#">Profile on MySpace</a></p>
