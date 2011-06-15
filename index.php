@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+session_start();
+include("mysql.inc.php");
+
+?>
 <!--上方語法為啟用session，此語法要放在網頁最前方-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
@@ -28,6 +32,7 @@
     <div id="header">
 
         <!-- Logotyp -->
+
         <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">Foodbook<?php echo "dasdasd"; ?><span></span></a></h1>
         <hr class="noscreen" />          
 
@@ -71,16 +76,14 @@
 			
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my best article</span></h2>
+
+                <h2><span><a href="#"><?php echo $record[0]['title']; ?></a></span></h2>             
+
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
-                Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                <p><?php echo $POC[0];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./test.html">Continue</a></strong></p>
             </div> <!-- /article -->
@@ -89,16 +92,13 @@
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my third article</a></span></h2>
+                <h2><span><a href="#"><?php echo $record[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
                     
                 </p>
 
-                <p>Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                 <p><?php echo $POC[1];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
             </div> <!-- /article -->
@@ -107,19 +107,15 @@
             
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my second article</a></span></h2>
+                <h2><span><a href="#"><?php echo $record[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
                     <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
                     <span class="comments"><a href="#">Comments</a></span>
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
-                Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                 <p><?php echo $POC[2];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
             </div> <!-- /article -->
@@ -128,24 +124,39 @@
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my first article</a></span></h2>
+                <h2><span><a href="#"><?php echo $record[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
                     <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
                     <span class="comments"><a href="#">Comments</a></span>
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
-                Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                <p><?php echo $POC[3];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
+			
+			 <!-- Article -->
+            <div class="article">
+                <h2><span><a href="#"><?php echo $record[4]['title']; ?></a></span></h2>
+                <p class="info noprint">
+                    <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
+                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
+                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
+                    <span class="comments"><a href="#">Comments</a></span>
+                </p>
+
+                <p><?php echo $POC[4];?></p>
+
+                <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
+            </div> <!-- /article -->
+
+            <hr class="noscreen" />
+			
+			
             
         </div> <!-- /content -->
 
