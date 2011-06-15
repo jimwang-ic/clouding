@@ -72,16 +72,12 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my best article</a></span></h2>
+                <h2><span><a href="#"><?php echo($row[6]);?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo($row[5]);?></span><span class="noscreen">,</span>
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
-                Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                <p><?php echo($row[7]);?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./test.html">Continue</a></strong></p>
             </div> <!-- /article -->
