@@ -1,3 +1,6 @@
+<?php
+include("mysql.inc.php");
+?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -26,7 +29,7 @@
     <div id="header">
 
         <!-- Logotyp -->
-        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">foodbook<?php echo "dasdasd"; ?><span></span></a></h1>
+        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">foodbook<span></span></a></h1>
         <hr class="noscreen" />          
 
         <!-- Quick links--> 
