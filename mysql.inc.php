@@ -1,12 +1,11 @@
 <?php
-	if( !@mysql_connect("140.119.164.193:3306","root","root"))
-		echo("cannot connect to server!");
-	
-	
+	session_start(); 
+	include("mysql_connect.inc.php");
 	//$id = $_SESSION['username'];
 	$id = 'ww2308';                    //¼È®É
-	mysql_query("SET NAMES utf8");	
-	mysql_select_db("foodbook");
+	//mysql_query("SET NAMES utf8");	
+	//mysql_select_db("foodbook");
+	
 	$sql = "SELECT * FROM article where author = '$id'";	
 	$result = mysql_query($sql);
 	//$row = @mysql_fetch_row($result);

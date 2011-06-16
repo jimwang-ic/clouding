@@ -1,8 +1,8 @@
 <?php
 session_start();
 include("mysql.inc.php");
+
 ?>
-<!--上方語法為啟用session，此語法要放在網頁最前方-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -12,7 +12,7 @@ include("mysql.inc.php");
     <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
     <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
-    <title>Foodbook</title>
+    <title>foodbook</title>
     <meta name="description" content="Food" />
     <meta name="keywords" content="Food" />
     
@@ -23,7 +23,7 @@ include("mysql.inc.php");
 </head>
 
 <body id="www-url-cz">
- 
+
 <!-- Main -->
 <div id="main" class="box">
 
@@ -31,8 +31,7 @@ include("mysql.inc.php");
     <div id="header">
 
         <!-- Logotyp -->
-
-        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">Foodbook<span></span></a></h1>
+        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">foodbook<span></span></a></h1>
         <hr class="noscreen" />          
 
         <!-- Quick links--> 
@@ -56,10 +55,11 @@ include("mysql.inc.php");
 
      <!-- Main menu (tabs) -->
      <div id="tabs" class="noprint">
+
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
-                <li id="active"><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
-                <li><a href="./test.html">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li> <!-- Active -->
+                <li><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li id="active"><a href="">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li> <!-- Active -->
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
@@ -69,96 +69,30 @@ include("mysql.inc.php");
     <!-- Page (2 columns) -->
     <div id="page" class="box">
     <div id="page-in" class="box">
-		
+
+      
+
         <!-- Content -->
         <div id="content">
-			
-            <!-- Article -->
-            <div class="article">
-
-                <h2><span><a href="#"><?php echo $record[0]['title']; ?></a></span></h2>             
-
-                <p class="info noprint">
-                    <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
-                </p>
-
-                <p><?php echo $POC[0];?></p>
-
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=0">Continue</a></strong></p>
-            </div> <!-- /article -->
-
-            <hr class="noscreen" />
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[1]['title']; ?></a></span></h2>
-                <p class="info noprint">
-                    <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
-                    
+                <h2><span><a href="#"><?php echo $record[$_GET['number']]['title']; ?></a></span></h2>
+                
+				<p class="info noprint">
+                    <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 
-                 <p><?php echo $POC[1];?></p>
+                <p>
+				<?php echo $record[$_GET['number']]['title']; ?>
+				</p>
 
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=1">Continue</a></strong></p>
+          
             </div> <!-- /article -->
 
             <hr class="noscreen" />
-            
-            <!-- Article -->
-            <div class="article">
-                <h2><span><a href="#"><?php echo $record[2]['title']; ?></a></span></h2>
-                <p class="info noprint">
-                    <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
-                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>
-                </p>
-
-                 <p><?php echo $POC[2];?></p>
-
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=2">Continue</a></strong></p>
-            </div> <!-- /article -->
-
-            <hr class="noscreen" />
-
-            <!-- Article -->
-            <div class="article">
-                <h2><span><a href="#"><?php echo $record[3]['title']; ?></a></span></h2>
-                <p class="info noprint">
-                    <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
-                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>
-                </p>
-
-                <p><?php echo $POC[3];?></p>
-
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=3">>Continue</a></strong></p>
-            </div> <!-- /article -->
-
-            <hr class="noscreen" />
-			
-			 <!-- Article -->
-            <div class="article">
-                <h2><span><a href="#"><?php echo $record[4]['title']; ?></a></span></h2>
-                <p class="info noprint">
-                    <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
-                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>
-                </p>
-
-                <p><?php echo $POC[4];?></p>
-
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=4">Continue</a></strong></p>
-            </div> <!-- /article -->
-
-            <hr class="noscreen" />
-			
-			
             
         </div> <!-- /content -->
-
         <!-- Right column -->
         <div id="col" class="noprint">
             <div id="col-in">
@@ -167,12 +101,12 @@ include("mysql.inc.php");
                 <h3><span><a href="#">About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it´s me!" />
-                    <strong><? echo $_SESSION['username']; ?></strong><br />
+                    <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it’s me!" />
+                    <strong><? echo $id; ?></strong><br />
 					<? 
 						include("mysql_connect.inc.php");
 						
-						$id = $_SESSION['username'];
+						//$id = $_SESSION['username'];
 						
 						$sql = "SELECT * FROM member where ID = '$id'";
 						$result = mysql_query($sql);
@@ -222,7 +156,18 @@ include("mysql.inc.php");
 
                 <hr class="noscreen" />
 
+                <!-- Links -->
+                <h3><span>Links</span></h3>
 
+                <ul id="links">
+                    <li><a href="#">Something</a></li>
+                    <li><a href="#">Something</a></li>
+                    <li><a href="#">Something</a></li>
+                    <li><a href="#">Something</a></li>
+                    <li><a href="#">Something</a></li>
+                </ul>
+
+                <hr class="noscreen" />
             
             </div> <!-- /col-in -->
         </div> <!-- /col -->
@@ -235,11 +180,9 @@ include("mysql.inc.php");
         <div id="top" class="noprint"><p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p></div>
         <hr class="noscreen" />
         
-        <p id="createdby">created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON´T REMOVE, PLEASE! --></p>
+        <p id="createdby">created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON’T REMOVE, PLEASE! --></p>
         <p id="copyright">&copy; 2007 <a href="mailto:my@mail.com">My Name</a></p>
     </div> <!-- /footer -->
-
 </div> <!-- /main -->
-
 </body>
 </html>
