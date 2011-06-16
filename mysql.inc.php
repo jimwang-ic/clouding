@@ -26,7 +26,8 @@
 		$record[$n]['region'] = $row[4];
 		$record[$n]['date'] = $row[5];
 		$record[$n]['title'] = $row[6];
-		$record[$n]['content'] = $row[7];	
+		$record[$n]['content'] = $row[7];
+		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];
 		$n++;
 	}	
@@ -36,13 +37,13 @@
 	//echo $record[1]['content'];
 	for($n=0;$n<5;$n++){
 		$POC[$n] = "";
-		$tmp[$n] = explode("\n",$record[$n]['content']);
+		$tmp[$n] = explode("\n",$record[$n]['content']);   //´«¦æ
 		for($i=0;$i<10;$i++){
 			$POC[$n] = $POC[$n].$tmp[$n][$i].'<br/>';  //Part Of Content
 		}
 	}
 	//echo $POC[0];
-	$content = str_replace("\n","<br/>",$row[7]);
+	
 	//echo $string.'<br/>';
 	//echo '<br>';
 ?>

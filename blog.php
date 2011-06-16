@@ -84,7 +84,7 @@ include("mysql.inc.php");
                 </p>
 
                 <p>
-				<?php echo $record[$_GET['number']]['title']; ?>
+				<?php echo $content[$_GET['number']]; ?>
 				</p>
 
           

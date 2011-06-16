@@ -85,7 +85,7 @@ include("mysql.inc.php");
 
                 <p><?php echo $POC[0];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=0">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./blog.php?number=0">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -100,7 +100,7 @@ include("mysql.inc.php");
 
                  <p><?php echo $POC[1];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=1">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./blog.php?number=1">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -117,7 +117,7 @@ include("mysql.inc.php");
 
                  <p><?php echo $POC[2];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=2">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./blog.php?number=2">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -134,7 +134,7 @@ include("mysql.inc.php");
 
                 <p><?php echo $POC[3];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=3">>Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./blog.php?number=3">>Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -151,7 +151,7 @@ include("mysql.inc.php");
 
                 <p><?php echo $POC[4];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./test.php?number=4">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./blog.php?number=4">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
