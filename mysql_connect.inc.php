@@ -1,23 +1,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
-	//¸ê®Æ®w³]©w
-	//¸ê®Æ®w¦ì¸m
+
+	$db_server = "140.119.164.193";
+
 	$db_server = "140.119.164.193:3306";
-	//¸ê®Æ®w¦WºÙ
+	//è³‡æ–™åº«åç¨±
+
 	$db_name = "Foodbook";
-	//¸ê®Æ®wºÞ²zªÌ±b¸¹
+
 	$db_user = "root";
-	//¸ê®Æ®wºÞ²zªÌ±K½X
+
 	$db_passwd = "root";
 
-	//¹ï¸ê®Æ®w³s½u
-	if(!@mysql_connect($db_server, $db_user, $db_passwd))
-	        die("µLªk¹ï¸ê®Æ®w³s½u");
 
-	//¸ê®Æ®w³s½u±ÄUTF8
+	if(!@mysql_connect($db_server, $db_user, $db_passwd))
+	        die("can't connect to DB");
+
 	mysql_query("SET NAMES utf8");
 
-	//¿ï¾Ü¸ê®Æ®w
+
 	if(!@mysql_select_db($db_name))
-	        die("µLªk¨Ï¥Î¸ê®Æ®w");
+	        die("can't connect to DB");
 ?>  
