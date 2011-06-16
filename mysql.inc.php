@@ -1,10 +1,12 @@
 <?php
 	if( !@mysql_connect("140.119.164.193:3306","root","root"))
 		echo("cannot connect to server!");
+	if (!isset($_SESSION)) {
+    session_start();
+	}
 	
-	
-	//$id = $_SESSION['username'];
-	$id = 'ww2308';                   
+	$id = $_SESSION['username'];
+	//$id = 'ww2308';                   
 	mysql_query("SET NAMES utf8");	
 
 	mysql_select_db("foodbook");

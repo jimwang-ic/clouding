@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php if (!isset($_SESSION)) {
+    session_start();
+} ?>
 <!--上方語法為啟用session，此語法要放在網頁最前方-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php

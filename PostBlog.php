@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 mysql_connect("140.119.164.193:3306","root","root");
 //mysql_query("SET NAMES utf8");	
 mysql_select_db("foodbook");

@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 include("mysql.inc.php");
 
 ?>
@@ -59,7 +61,7 @@ include("mysql.inc.php");
      <div id="tabs" class="noprint">
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
-                <li id="active"><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li id="active"><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./test.html">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li> <!-- Active -->
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
@@ -185,7 +187,7 @@ include("mysql.inc.php");
 						echo $region.'<br />';		
 					?>
                   
-                    <a href="#">Profile on MySpace</a></p>
+                    <a href="./profile.php">Profile on MySpace</a></p>
                 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />
