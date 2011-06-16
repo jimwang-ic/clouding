@@ -4,7 +4,7 @@
 		
 	mysql_query("SET NAMES utf8");	
 	mysql_select_db("foodbook");	
-	$result = mysql_query("SELECT * FROM article") or die(mysql_error());
+	$result = mysql_query("SELECT * FROM article ORDER BY ID DESC") or die(mysql_error());
 	$row = mysql_fetch_array($result);
 	echo "$row[6]";
 ?>
