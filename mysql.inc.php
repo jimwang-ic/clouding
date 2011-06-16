@@ -9,7 +9,7 @@
 
 	mysql_select_db("foodbook");
 	
-	$sql = "SELECT * FROM article where author = '$id'";	
+	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
 	$result = mysql_query($sql);
 	//$row = @mysql_fetch_row($result);
 	$n=0;

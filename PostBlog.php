@@ -1,4 +1,5 @@
 <?php
+session_start();
 mysql_connect("140.119.164.193:3306","root","root");
 //mysql_query("SET NAMES utf8");	
 mysql_select_db("foodbook");
@@ -8,12 +9,6 @@ $myTable = 'article';
 //定義 $errMsg 變數, 用以存放錯誤訊息
 $errMsg='';
 
-if ( isset($_POST['name']) && $_POST['name'] !='' ) {
-  $name=$_POST['name'];
-} else {
-  $name='';
-  $errMsg.='您忘記輸入姓名<br />';
-}
 
 
 if ( isset($_POST['message']) && $_POST['message'] !='' ) {
@@ -23,6 +18,7 @@ if ( isset($_POST['message']) && $_POST['message'] !='' ) {
   $errMsg.='您忘記輸入留言<br />';
 }
 
+$name = $_SESSION['username'];
 $class = $_POST['class'];
 $score = $_POST['score'];
 $region = $_POST['region'];
