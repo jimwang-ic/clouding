@@ -61,6 +61,7 @@ include("mysql.inc.php");
                 <li id="active"><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./test.html">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li> <!-- Active -->
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
