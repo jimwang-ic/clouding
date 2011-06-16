@@ -1,6 +1,9 @@
 <?php
+session_start();
 include("mysql.inc.php");
+
 ?>
+<!--上方語法為啟用session，此語法要放在網頁最前方-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -10,7 +13,7 @@ include("mysql.inc.php");
     <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
     <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
-    <title>foodbook</title>
+    <title>Foodbook</title>
     <meta name="description" content="Food" />
     <meta name="keywords" content="Food" />
     
@@ -21,7 +24,7 @@ include("mysql.inc.php");
 </head>
 
 <body id="www-url-cz">
-
+ 
 <!-- Main -->
 <div id="main" class="box">
 
@@ -29,7 +32,8 @@ include("mysql.inc.php");
     <div id="header">
 
         <!-- Logotyp -->
-        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">foodbook<span></span></a></h1>
+
+        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">Foodbook<?php echo "dasdasd"; ?><span></span></a></h1>
         <hr class="noscreen" />          
 
         <!-- Quick links--> 
@@ -66,18 +70,20 @@ include("mysql.inc.php");
     <!-- Page (2 columns) -->
     <div id="page" class="box">
     <div id="page-in" class="box">
-
+		
         <!-- Content -->
         <div id="content">
-
+			
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo($row[6]);?></a></span></h2>
+
+                <h2><span><a href="#"><?php echo $record[0]['title']; ?></a></span></h2>             
+
                 <p class="info noprint">
-                    <span class="date"><?php echo($row[5]);?></span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 
-                <p><?php echo($row[7]);?></p>
+                <p><?php echo $POC[0];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./test.html">Continue</a></strong></p>
             </div> <!-- /article -->
@@ -86,18 +92,13 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my third article</a></span></h2>
+                <h2><span><a href="#"><?php echo $record[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
-                    <!--<span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>-->
+                    <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
+                    
                 </p>
 
-                <p>Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                 <p><?php echo $POC[1];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
             </div> <!-- /article -->
@@ -106,19 +107,15 @@ include("mysql.inc.php");
             
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my second article</a></span></h2>
+                <h2><span><a href="#"><?php echo $record[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
                     <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
                     <span class="comments"><a href="#">Comments</a></span>
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
-                Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                 <p><?php echo $POC[2];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
             </div> <!-- /article -->
@@ -127,24 +124,39 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">This is my first article</a></span></h2>
+                <h2><span><a href="#"><?php echo $record[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date">2007-01-01 @ 00:01</span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
                     <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
                     <span class="comments"><a href="#">Comments</a></span>
                 </p>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque enim blandit enim bibendum blandit.
-                Integer eu leo ac est aliquet imperdiet. Quisque nec justo id augue posuere malesuada. Nullam ac metus. Cras non leo
-                ut est placerat condimentum. Aliquam ut enim. Quisque non sapien in enim eleifend faucibus. Pellentesque sodales. Mauris
-                auctor arcu sit amet felis. Donec eget enim ut lacus pharetra condimentum. Nulla in felis vel tortor imperdiet consectetuer.
-                Sed id ante.</p>
+                <p><?php echo $POC[3];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
+			
+			 <!-- Article -->
+            <div class="article">
+                <h2><span><a href="#"><?php echo $record[4]['title']; ?></a></span></h2>
+                <p class="info noprint">
+                    <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
+                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
+                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
+                    <span class="comments"><a href="#">Comments</a></span>
+                </p>
+
+                <p><?php echo $POC[4];?></p>
+
+                <p class="btn-more box noprint"><strong><a href="#">Continue</a></strong></p>
+            </div> <!-- /article -->
+
+            <hr class="noscreen" />
+			
+			
             
         </div> <!-- /content -->
 
@@ -157,10 +169,21 @@ include("mysql.inc.php");
 
                 <div id="about-me">
                     <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it´s me!" />
-                    <strong>klj</strong><br />
-					<? echo "dsadasd";?>
-                    Age: 26<br />
-                    Dallas, TX<br />
+                    <strong><? echo $_SESSION['username']; ?></strong><br />
+					<? 
+						include("mysql_connect.inc.php");
+						
+						$id = $_SESSION['username'];
+						
+						$sql = "SELECT * FROM member where ID = '$id'";
+						$result = mysql_query($sql);
+						$row = @mysql_fetch_row($result);
+						$gender = $row[1];
+						$region = $row[2];
+						echo 'Gender:'.$gender.'<br/>';
+						echo $region.'<br />';		
+					?>
+                  
                     <a href="#">Profile on MySpace</a></p>
                 </div> <!-- /about-me -->
 
