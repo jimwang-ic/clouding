@@ -187,6 +187,12 @@ include("mysql.inc.php");
 					?>
                   
                     <a href="./profile.php">Profile on MySpace</a></p>
+                    <br/>
+                    <div id="add_friend">
+                    <form method="post" action="addFriend.php" name="addFriend">
+                    	Add Friend : <input name="FriendID"><br />
+                    </form>
+                    </div>
                 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />

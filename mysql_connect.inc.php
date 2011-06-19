@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 
-	$db_server = "140.119.164.193";
+	//$db_server = "140.119.164.193";
 
 	$db_server = "140.119.164.193:3306";
 	//資料庫名稱
