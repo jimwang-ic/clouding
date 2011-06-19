@@ -15,12 +15,13 @@
 	mysql_select_db("foodbook");
 	
 	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
-
+	
+	mysql_query("SET NAMES utf8;");
 	$result = mysql_query($sql);
 	//mysql_query("SET NAMES utf8");
-	mysql_query("SET NAMES utf8;");
-	mysql_query("SET CHARACTER_SET_CLIENT=utf8;");
-	mysql_query("SET CHARACTER_SET_RESULTS=utf8;");	
+	
+	//mysql_query("SET CHARACTER_SET_CLIENT=utf8;");
+	//mysql_query("SET CHARACTER_SET_RESULTS=utf8;");	
 	//$row = @mysql_fetch_row($result);
 	
 	$n=0;
