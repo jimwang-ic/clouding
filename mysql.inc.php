@@ -31,7 +31,6 @@
 		$record[$n]['region'] = $row[4];
 		$record[$n]['date'] = $row[5];
 		$record[$n]['title'] = $row[6];
-		echo $row[6];
 		$record[$n]['content'] = $row[7];
 		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];
