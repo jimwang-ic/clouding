@@ -6,8 +6,8 @@ include("mysql_connect.inc.php");
 $id = $_POST['id'];
 $pw = $_POST['pw'];
 $pw2 = $_POST['pw2'];
-$telephone = $_POST['gender'];
-$address = $_POST['region'];
+$gender = $_POST['gender'];
+$region = $_POST['region'];
 
 //判斷帳號密碼是否為空值
 //確認密碼輸入的正確性
