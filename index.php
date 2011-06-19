@@ -78,7 +78,7 @@ include("mysql.inc.php");
             <!-- Article -->
             <div class="article">
 
-                <h2><span><a href="#"><?php echo $record[0]['title']; ?></a></span></h2>             
+                <h2><span><a href="./blog.php?number=0"><?php echo $record[0]['title']; ?></a></span></h2>             
 
                 <p class="info noprint">
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
@@ -93,7 +93,7 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[1]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=1"><?php echo $record[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
                     
@@ -108,7 +108,7 @@ include("mysql.inc.php");
             
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[2]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=2"><?php echo $record[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
@@ -125,7 +125,7 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[3]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=3"><?php echo $record[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
@@ -142,7 +142,7 @@ include("mysql.inc.php");
 			
 			 <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[4]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=4"><?php echo $record[4]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
