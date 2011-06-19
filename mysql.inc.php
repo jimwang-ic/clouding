@@ -9,26 +9,15 @@
 	
 	$id = $_SESSION['username'];
 	//$id = 'ww2308';                   
-/*=======
-	session_start(); 
-	include("mysql_connect.inc.php");
-	//$id = $_SESSION['username'];
 
-	$id = 'ww2308';                    //¼È®É
-	//mysql_query("SET NAMES utf8");	
-	//mysql_select_db("foodbook");
 	
-	$sql = "SELECT * FROM article where author = '$id'";	
-
-	$id = 'ww2308';                   
->>>>>>> 5169b53df77c293aa6866fa81be9a4ff3cb49556*/
-	mysql_query("SET NAMES utf8");	
 
 	mysql_select_db("foodbook");
 	
 	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
 
 	$result = mysql_query($sql);
+	mysql_query("SET NAMES utf8");	
 	//$row = @mysql_fetch_row($result);
 	$n=0;
 	while($n < 5){  	
@@ -38,13 +27,14 @@
 		$record[$n]['region'] = $row[4];
 		$record[$n]['date'] = $row[5];
 		$record[$n]['title'] = $row[6];
+		echo $record[$n]['title'];
 		$record[$n]['content'] = $row[7];
 		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];
 		$n++;
 	}	
 	
-
+	
 	//$POC[5]= array();
 	//echo $record[1]['content'];
 	for($n=0;$n<5;$n++){
