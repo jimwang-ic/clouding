@@ -17,8 +17,12 @@
 	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
 
 	$result = mysql_query($sql);
-	mysql_query("SET NAMES utf8");	
+	//mysql_query("SET NAMES utf8");
+	mysql_query("SET NAMES utf8;");
+	mysql_query("SET CHARACTER_SET_CLIENT=utf8;");
+	mysql_query("SET CHARACTER_SET_RESULTS=utf8;");	
 	//$row = @mysql_fetch_row($result);
+	
 	$n=0;
 	while($n < 5){  	
 		$row = mysql_fetch_row($result);
@@ -27,7 +31,7 @@
 		$record[$n]['region'] = $row[4];
 		$record[$n]['date'] = $row[5];
 		$record[$n]['title'] = $row[6];
-		echo $record[$n]['title'];
+		echo $row[6];
 		$record[$n]['content'] = $row[7];
 		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];

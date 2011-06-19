@@ -34,7 +34,7 @@ include("mysql.inc.php");
 
         <!-- Logotyp -->
 
-        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">Foodbook<span></span></a></h1>
+        <h1 id="logo"><a href="./index.php" title="foodbook [Go to homepage]">Foodbook<span></span></a></h1>
         <hr class="noscreen" />          
 
         <!-- Quick links--> 
@@ -61,7 +61,6 @@ include("mysql.inc.php");
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
                 <li id="active"><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
-                <li><a href="./test.html">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li> <!-- Active -->
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>

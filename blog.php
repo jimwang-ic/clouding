@@ -12,7 +12,7 @@ include("mysql.inc.php");
     <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
     <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
-    <title>foodbook</title>
+    <title>Foodbook</title>
     <meta name="description" content="Food" />
     <meta name="keywords" content="Food" />
     
@@ -31,7 +31,7 @@ include("mysql.inc.php");
     <div id="header">
 
         <!-- Logotyp -->
-        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">foodbook<span></span></a></h1>
+        <h1 id="logo"><a href="./" title="foodbook [Go to homepage]">Foodbook<span></span></a></h1>
         <hr class="noscreen" />          
 
         <!-- Quick links--> 
@@ -58,9 +58,9 @@ include("mysql.inc.php");
 
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
-                <li><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
-                <li id="active"><a href="">Weblog<span class="tab-l"></span><span class="tab-r"></span></a></li> <!-- Active -->
+                <li id="active"><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
+				<li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
@@ -82,12 +82,13 @@ include("mysql.inc.php");
 				<p class="info noprint">
                     <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
-
                 <p>
 				<?php echo $content[$_GET['number']]; ?>
 				</p>
 
-          
+				<p>
+				
+				</p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
