@@ -11,11 +11,34 @@
   <div id="maintext">
 
   <form method="post" action="PostBlog.php" name="addmessage">
-    分類: <input name="class"><br />
+
+    分類: <select name="class">
+	<OPTION VALUE="ch">中式</Option> 
+	<OPTION VALUE="jpn">日式</Option>
+	<OPTION VALUE="kor">韓式</Option> 
+	<OPTION VALUE="south">南洋</Option>
+	<OPTION VALUE="ds">甜點</Option> 
+	<OPTION VALUE="us">美式</Option>
+	<OPTION VALUE="west">西式</Option> 
+	<OPTION VALUE="hotpot">火鍋</Option>
+	<OPTION VALUE="bbq">燒烤</Option> 
+	<OPTION VALUE="nm">夜市小吃</Option>
+	</select>
+	<br />
     <br />
     評價(0~100): <input name="score"><br />
     <br />
-    地點: <input name="region"><br />
+    地點: <select name="region">
+	<OPTION VALUE="taipei">台北市</Option> 
+	<OPTION VALUE="n_taipei">新北市</Option>
+	<OPTION VALUE="keelung">基隆市</Option> 
+	<OPTION VALUE="kaohsiung">高雄市</Option>
+	<OPTION VALUE="taichung">台中市</Option> 
+	<OPTION VALUE="hsinchu">新竹縣</Option>
+	<OPTION VALUE="tainan">台南市</Option>
+	<OPTION VALUE="taoyuan">桃園縣</Option>
+	</select>
+	<br />
     <br />
     Title <input name="title"><br />
     <br />

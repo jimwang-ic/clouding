@@ -30,6 +30,7 @@ if ($errMsg ==''){
   //設定使用台北時區
   date_default_timezone_set('Asia/Taipei');
   //將姓名、留言、目前的日期時間寫入資料庫
+
   $sql=sprintf("INSERT $myTable (author,class,score,region,date,title,content)
                 VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",
                $name,

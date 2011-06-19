@@ -9,10 +9,13 @@
 	</style>
 </head>
 
-<body style="text-align:center">
+<body style="text-align:center";>
 
-  <p>
-  <strong>Login</strong><br /><p/>
+  <div style="text-align:center">
+	<span style="text-align:center"><strong>Foodbook</strong></span>
+	<span><a href="register.php">註冊會員</a></span>
+  </div>
+  <h2><strong>Login</strong></h2>
   <?php
 		echo '<form method="POST" action="connect.php">';
 		echo 'Username：<input type="text" name="username" /><br />';
