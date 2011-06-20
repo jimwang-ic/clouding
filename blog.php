@@ -2,6 +2,29 @@
 session_start();
 include("mysql.inc.php");
 ?>
+
+<script type="text/javascript">
+function LikeAction(ID)
+{
+	xmlhttp=new XMLHttpRequest();
+	//document.getElementById("people_number").innerHTML = ID;
+	xmlhttp.onreadystatechange=function()
+  	{
+  		if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    	{
+    		document.getElementById("people_number").innerHTML = xmlhttp.responseText;
+    		document.getElementById("people_number1").innerHTML = xmlhttp.responseText;
+    	}
+  	}
+	xmlhttp.open("GET","LikeAction.php?q=" + ID ,true);
+	xmlhttp.send();
+
+	
+}
+</script>
+
+
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -22,8 +45,9 @@ include("mysql.inc.php");
 </head>
 
 <body id="www-url-cz">
-
 <!-- Main -->
+
+
 <div id="main" class="box">
 
     <!-- Header -->
@@ -80,17 +104,31 @@ include("mysql.inc.php");
 				<p class="info noprint">
                     <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
+                <?php
+						$aritcleID=$record[$_GET['number']]['id'];
+						print "<input type='button' name='Like' value='Like' onClick=LikeAction('$aritcleID')>";
+				?>
+                <span><div id="people_number"><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</div></span>
 				
+				<p>
+				<?php echo $content[$_GET['number']]; ?>
+				</p>
+
+				<p>
+				<?php
+						$aritcleID=$record[$_GET['number']]['id'];
+						print "<input type='button' name='Like2' value='Like' onClick=LikeAction('$aritcleID')>";
+				?>
+				</p>
+            </div> <!-- /article -->
 				<p class="info noprint">
-                    <span>?幾個人都說讚</span>
+                    <div id="people_number1"><span><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</span></div>
                 </p>
-				
                 <p>
 				<?php echo $content[$_GET['number']]; ?>
 				</p>
  
 			</div> <!-- /article -->
-
             <hr class="noscreen" />
             
         </div> <!-- /content -->

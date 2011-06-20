@@ -10,12 +10,14 @@
 	$n=0;
 	while($n < 5){  	
 		$row = mysql_fetch_row($result);
+		$record[$n]['id'] = $row[0];
 		$record[$n]['author'] = $row[1];
 		$record[$n]['class'] = $row[2];
 		$record[$n]['region'] = $row[4];
 		$record[$n]['date'] = $row[5];
 		$record[$n]['title'] = $row[6];
 		$record[$n]['content'] = $row[7];
+		$record[$n]['like_count']= $row[8];
 		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];
 		$n++;
