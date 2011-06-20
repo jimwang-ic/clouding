@@ -27,6 +27,7 @@
 	$n=0;
 	while($n < 5){  	
 		$row = mysql_fetch_row($result);
+		$record[$n]['id'] = $row[0];
 		$record[$n]['author'] = $row[1];
 		$record[$n]['class'] = $row[2];
 		$record[$n]['region'] = $row[4];
