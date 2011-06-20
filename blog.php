@@ -7,14 +7,14 @@ include("mysql.inc.php");
 function LikeAction(ID)
 {
 	xmlhttp=new XMLHttpRequest();
-	//document.getElementById("demo").innerHTML = ID;
-	/*xmlhttp.onreadystatechange=function()
+	//document.getElementById("people_number").innerHTML = ID;
+	xmlhttp.onreadystatechange=function()
   	{
   		if (xmlhttp.readyState==4 && xmlhttp.status==200)
     	{
-    		document.getElementById("demo").innerHTML=xmlhttp.responseText;
+    		document.getElementById("people_number").innerHTML=xmlhttp.responseText;
     	}
-  	}*/
+  	}
 	xmlhttp.open("GET","LikeAction.php?q=" + ID ,true);
 	xmlhttp.send();
 
@@ -45,6 +45,8 @@ function LikeAction(ID)
 
 <body id="www-url-cz">
 <!-- Main -->
+
+
 <div id="main" class="box">
 
     <!-- Header -->
@@ -105,7 +107,9 @@ function LikeAction(ID)
 						$aritcleID=$record[$_GET['number']]['id'];
 						print "<input type='button' name='Like' value='Like' onClick=LikeAction('$aritcleID')>";
 				?>
-                <p>
+                <span><div id="people_number"><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</div></span>
+				
+				<p>
 				<?php echo $content[$_GET['number']]; ?>
 				</p>
 
@@ -116,11 +120,9 @@ function LikeAction(ID)
 				?>
 				</p>
             </div> <!-- /article -->
-				
 				<p class="info noprint">
-                    <span>?幾個人都說讚</span>
+                    <div id="people_number"><span><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</span></div>
                 </p>
-				
                 <p>
 				<?php echo $content[$_GET['number']]; ?>
 				</p>

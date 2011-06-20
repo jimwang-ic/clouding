@@ -17,6 +17,7 @@
 		$record[$n]['date'] = $row[5];
 		$record[$n]['title'] = $row[6];
 		$record[$n]['content'] = $row[7];
+		$record[$n]['like_count']= $row[8];
 		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];
 		$n++;
