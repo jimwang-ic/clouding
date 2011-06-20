@@ -3,6 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 include("mysql.inc.php");
+
 ?>
 <!--上方語法為啟用session，此語法要放在網頁最前方-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
@@ -169,23 +170,14 @@ include("mysql.inc.php");
                 <h3><span><a href="#">About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it´s me!" />
-                    <strong><? echo $_SESSION['username']; ?></strong><br />
+                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it´s me!" />
+                    <strong><? echo $id; ?></strong><br />
 					<? 
-						include("mysql_connect.inc.php");
-						
-						$id = $_SESSION['username'];
-						
-						$sql = "SELECT * FROM member where ID = '$id'";
-						$result = mysql_query($sql);
-						$row = @mysql_fetch_row($result);
-						$gender = $row[1];
-						$region = $row[2];
 						echo 'Gender:'.$gender.'<br/>';
-						echo $region.'<br />';		
+						echo 'region:'.$region.'<br/>';		
 					?>
                   
-                    <a href="./profile.php">Profile on MySpace</a></p>
+                    <a href="upimage.php">Upload Myphoto</a></p>
                     <br/>
                     <div id="add_friend">
                     <form method="post" action="addFriend.php" name="addFriend">

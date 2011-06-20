@@ -1,8 +1,6 @@
 <?php
 session_start();
 include("mysql.inc.php");
-
-
 ?>
 
 <script type="text/javascript">
@@ -99,8 +97,7 @@ function LikeAction(ID)
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[$_GET['number']]['title']; ?></a></span></h2>
-                
+                <h2><span><?php echo $record[$_GET['number']]['title']." "; ?></span></h2>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 				<p class="info noprint">
                     <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
@@ -119,7 +116,16 @@ function LikeAction(ID)
 				?>
 				</p>
             </div> <!-- /article -->
-
+				
+				<p class="info noprint">
+                    <span>?幾個人都說讚</span>
+                </p>
+				
+                <p>
+				<?php echo $content[$_GET['number']]; ?>
+				</p>
+ 
+			</div> <!-- /article -->
             <hr class="noscreen" />
             
         </div> <!-- /content -->
@@ -131,23 +137,14 @@ function LikeAction(ID)
                 <h3><span><a href="#">About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it’s me!" />
+                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it’s me!" />
                     <strong><? echo $id; ?></strong><br />
 					<? 
-						include("mysql_connect.inc.php");
-						
-						//$id = $_SESSION['username'];
-						
-						$sql = "SELECT * FROM member where ID = '$id'";
-						$result = mysql_query($sql);
-						$row = @mysql_fetch_row($result);
-						$gender = $row[1];
-						$region = $row[2];
 						echo 'Gender:'.$gender.'<br/>';
-						echo $region.'<br />';		
+						echo 'region:'.$region.'<br/>';		
 					?>
                   
-                    <a href="#">Profile on MySpace</a></p>
+                    <a href="upimage.php">Upload Myphoto</a></p>
                 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />
