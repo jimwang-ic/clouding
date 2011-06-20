@@ -169,7 +169,7 @@ include("mysql.inc.php");
                 <h3><span><a href="#">About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it´s me!" />
+                    <p><img src="./thumb/002.jpg" id="me" alt="Yeah, it´s me!" />
                     <strong><? echo $_SESSION['username']; ?></strong><br />
 					<? 
 						include("mysql_connect.inc.php");

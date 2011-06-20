@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("mysql.inc.php");
+include("function.php");
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
@@ -77,19 +78,22 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[$_GET['number']]['title']; ?></a></span></h2>
+                <h2><span><?php echo $record[$_GET['number']]['title']." "; ?></span>
+					<span><a href="#">讚</a><?php echo clickOnGood();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ?></span></h2>
                 
 				<p class="info noprint">
                     <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
+				
+				<p class="info noprint">
+                    <span>?幾個人都說讚</span>
+                </p>
+				
                 <p>
 				<?php echo $content[$_GET['number']]; ?>
 				</p>
-
-				<p>
-				
-				</p>
-            </div> <!-- /article -->
+ 
+			</div> <!-- /article -->
 
             <hr class="noscreen" />
             
