@@ -3,6 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 include("mysql.inc.php");
+
 ?>
 <!--上方語法為啟用session，此語法要放在網頁最前方-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
@@ -78,7 +79,7 @@ include("mysql.inc.php");
             <!-- Article -->
             <div class="article">
 
-                <h2><span><a href="#"><?php echo $record[0]['title']; ?></a></span></h2>             
+                <h2><span><a href="./blog.php?number=0"><?php echo $record[0]['title']; ?></a></span></h2>             
 
                 <p class="info noprint">
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
@@ -93,7 +94,7 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[1]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=1"><?php echo $record[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
                     
@@ -108,7 +109,7 @@ include("mysql.inc.php");
             
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[2]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=2"><?php echo $record[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
@@ -125,7 +126,7 @@ include("mysql.inc.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[3]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=3"><?php echo $record[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
@@ -142,7 +143,7 @@ include("mysql.inc.php");
 			
 			 <!-- Article -->
             <div class="article">
-                <h2><span><a href="#"><?php echo $record[4]['title']; ?></a></span></h2>
+                <h2><span><a href="./blog.php?number=4"><?php echo $record[4]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
                     <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
@@ -169,23 +170,20 @@ include("mysql.inc.php");
                 <h3><span><a href="#">About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="./thumb/002.jpg" id="me" alt="Yeah, it´s me!" />
-                    <strong><? echo $_SESSION['username']; ?></strong><br />
+                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it´s me!" />
+                    <strong><? echo $id; ?></strong><br />
 					<? 
-						include("mysql_connect.inc.php");
-						
-						$id = $_SESSION['username'];
-						
-						$sql = "SELECT * FROM member where ID = '$id'";
-						$result = mysql_query($sql);
-						$row = @mysql_fetch_row($result);
-						$gender = $row[1];
-						$region = $row[2];
 						echo 'Gender:'.$gender.'<br/>';
-						echo $region.'<br />';		
+						echo 'region:'.$region.'<br/>';		
 					?>
                   
-                    <a href="./profile.php">Profile on MySpace</a></p>
+                    <a href="upimage.php">Upload Myphoto</a></p>
+                    <br/>
+                    <div id="add_friend">
+                    <form method="post" action="addFriend.php" name="addFriend">
+                    	Add Friend : <input name="FriendID"><br />
+                    </form>
+                    </div>
                 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />

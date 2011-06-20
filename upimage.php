@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("mysql.inc.php");
+?>
 <!--上傳照片示例 upimage.php
 功能：上傳照片，顯示上傳人、上傳時間、圖片名稱、圖片大小、圖片說明。
 說明：1.有一些主頁空間可能不支持上傳後的臨時文件操作，那只能換一個試試啦。
@@ -60,10 +64,11 @@
 			$up=copy($_FILES['picurl']['tmp_name'], "image/" . $_FILES['picurl']['name']); 
 			//$up=copy("$picurl","image/$picurl_name"); //關鍵一步，將臨時文件複製到image目錄下
 			
-			$URL="'C:/AppServ/www/clouding/thumb/".$_FILES['picurl']['name']."'";
-			echo $URL;
-			$sql = sprintf("INSERT INTO img (acc) VALUES ({$URL})");
-
+			$URL="./thumb/".$_FILES['picurl']['name'];
+			$query1 = " UPDATE member SET photo_route = '{$URL}' where ID ='{$id}' ";
+			
+			mysql_query($query1) or die("無法送出" . mysql_error());
+			
 			if($up==1)
 			{
 				//文件操作
@@ -78,6 +83,7 @@
 				echo "文件上傳成功!<BR>";
 				unlink ($picurl); //從臨時文件夾中刪除檔案$picurl
 				closedir ($v); //關閉目錄handle
+				echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 			}
 			else{
 				echo "文件上傳失敗."; exit;
@@ -90,14 +96,7 @@
 			<div align="center" class="white12">所有照片</div>
 			</td>
 		</tr>
-	<tr>
-	<td class="black10">
-		<?php
-			//顯示以往上傳照片信息
-			readfile ("photo.txt");
-		?>
-	</td>
-	</tr>
+	
 	<tr bgcolor="#6699FF">
 		<td>
 			<div align="center" class="white12">上傳照片</div>

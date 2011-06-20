@@ -1,8 +1,6 @@
 <?php
 session_start();
 include("mysql.inc.php");
-include("function.php");
-
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
@@ -59,7 +57,7 @@ include("function.php");
 
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
-                <li id="active"><a href="./index.html">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li id="active"><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
@@ -78,9 +76,7 @@ include("function.php");
 
             <!-- Article -->
             <div class="article">
-                <h2><span><?php echo $record[$_GET['number']]['title']." "; ?></span>
-					<span><a href="#">讚</a><?php echo clickOnGood();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ?></span></h2>
-                
+                <h2><span><?php echo $record[$_GET['number']]['title']." "; ?></span></h2>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 				<p class="info noprint">
                     <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
@@ -106,23 +102,14 @@ include("function.php");
                 <h3><span><a href="#">About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="design/tmp_photo.gif" id="me" alt="Yeah, it’s me!" />
+                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it’s me!" />
                     <strong><? echo $id; ?></strong><br />
 					<? 
-						include("mysql_connect.inc.php");
-						
-						//$id = $_SESSION['username'];
-						
-						$sql = "SELECT * FROM member where ID = '$id'";
-						$result = mysql_query($sql);
-						$row = @mysql_fetch_row($result);
-						$gender = $row[1];
-						$region = $row[2];
 						echo 'Gender:'.$gender.'<br/>';
-						echo $region.'<br />';		
+						echo 'region:'.$region.'<br/>';		
 					?>
                   
-                    <a href="#">Profile on MySpace</a></p>
+                    <a href="upimage.php">Upload Myphoto</a></p>
                 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />

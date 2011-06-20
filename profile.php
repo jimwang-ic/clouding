@@ -13,10 +13,11 @@ $sql = "SELECT friendID FROM relationship where ID = '$id'";
 
 $result = mysql_query($sql);
 
-echo "$id's friend list <br /><br />" ;
+echo "<h3>$id's friend list<h3/>" ;
+echo "======================================<br/>";
 
 while ($row = mysql_fetch_row($result)){
-	echo "$row[0]";
+	echo "<p>$row[0]<p/>";
 }
 
 ?>

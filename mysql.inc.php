@@ -3,12 +3,8 @@
 	include("mysql_connect.inc.php");
 	//$id = $_SESSION['username'];
 	$id = 'ww2308';                   
-	
-	//mysql_select_db("foodbook");
-	
+
 	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
-	//$sql = "SELECT * FROM article where author = '$id'";
-	//mysql_query("SET NAMES utf8;");
 	$result = mysql_query($sql);
 
 	$n=0;
@@ -32,4 +28,13 @@
 			$POC[$n] = $POC[$n].$tmp[$n][$i].'<br/>';  //Part Of Content
 		}
 	}
+	
+	$sql = "SELECT * FROM member where ID = '$id'";
+	$result = mysql_query($sql);
+	$row = @mysql_fetch_row($result);
+	$gender = $row[1];
+	$region = $row[2];
+	$photo_route = $row[4];
+
+	
 ?>
