@@ -12,7 +12,8 @@ function LikeAction(ID)
   	{
   		if (xmlhttp.readyState==4 && xmlhttp.status==200)
     	{
-    		document.getElementById("people_number").innerHTML=xmlhttp.responseText;
+    		document.getElementById("people_number").innerHTML = xmlhttp.responseText;
+    		document.getElementById("people_number1").innerHTML = xmlhttp.responseText;
     	}
   	}
 	xmlhttp.open("GET","LikeAction.php?q=" + ID ,true);
@@ -121,7 +122,7 @@ function LikeAction(ID)
 				</p>
             </div> <!-- /article -->
 				<p class="info noprint">
-                    <div id="people_number"><span><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</span></div>
+                    <div id="people_number1"><span><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</span></div>
                 </p>
                 <p>
 				<?php echo $content[$_GET['number']]; ?>
