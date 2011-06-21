@@ -60,8 +60,8 @@ include("mysql.inc.php");
      <div id="tabs" class="noprint">
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
-                <li id="active"><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
-                <li><a href="./hot.php">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li id="active"><a href="./hot.php">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./AddGroup.html">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
@@ -79,93 +79,101 @@ include("mysql.inc.php");
 			
             <!-- Article -->
             <div class="article">
-
-                <h2><span><a href="./blog.php?number=0"><?php echo $record[0]['title']; ?></a></span></h2>             
+				<h2>TOP 1</h2>
+                <h2><span><a href="./blog.php?number=0"><?php echo $hot[0]['title']; ?></a></span></h2>             
                 <p class="info noprint">
-                    <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $hot[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[0]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[1]['author']; ?>
+					<img src="<?php echo ShowAuthor($hot[0]['author']); ?>" id="me" alt="Yeah, it’s me!" />
+					Author:<?php echo $hot[0]['author']; ?>
 				</p>
-                <p><?php echo $POC[0];?></p>
+                <p><?php echo $HPOC[0];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./blog.php?number=0">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./hotblog.php?number=0">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="./blog.php?number=1"><?php echo $record[1]['title']; ?></a></span></h2>
+			
+				<h2>TOP 2</h2>
+                <h2><span><a href="./blog.php?number=1"><?php echo $hot[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>   
+                    <span class="date"><?php echo $hot[1]['date']; ?></span><span class="noscreen">,</span>   
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[1]['author']; ?>
+					<img src="<?php echo ShowAuthor($hot[1]['author']); ?>" id="me" alt="Yeah, it’s me!" />
+					Author:<?php echo $hot[1]['author']; ?>
 				</p>
 				
-                 <p><?php echo $POC[1];?></p>
+                 <p><?php echo $HPOC[1];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./blog.php?number=1">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./hotblog.php?number=1">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
             
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="./blog.php?number=2"><?php echo $record[2]['title']; ?></a></span></h2>
+			
+				<h2>TOP 3</h2>
+                <h2><span><a href="./blog.php?number=2"><?php echo $hot[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $hot[2]['date']; ?></span><span class="noscreen">,</span>
                    
                 </p>
 
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[2]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[2]['author']; ?>
+					<img src="<?php echo ShowAuthor($hot[2]['author']); ?>" id="me" alt="Yeah, it’s me!" />
+					Author:<?php echo $hot[2]['author']; ?>
 				</p>
-                 <p><?php echo $POC[2];?></p>
+                 <p><?php echo $HPOC[2];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./blog.php?number=2">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./hotblog.php?number=2">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="./blog.php?number=3"><?php echo $record[3]['title']; ?></a></span></h2>
+			
+				<h2>TOP 4</h2>
+                <h2><span><a href="./blog.php?number=3"><?php echo $hot[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $hot[3]['date']; ?></span><span class="noscreen">,</span>
                   
                 </p>
 
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[3]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[3]['author']; ?>
+					<img src="<?php echo ShowAuthor($hot[3]['author']); ?>" id="me" alt="Yeah, it’s me!" />
+					Author:<?php echo $hot[3]['author']; ?>
 				</p>
-                <p><?php echo $POC[3];?></p>
+                <p><?php echo $HPOC[3];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./blog.php?number=3">>Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./hotblog.php?number=3">>Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
 			
 			 <!-- Article -->
             <div class="article">
-                <h2><span><a href="./blog.php?number=4"><?php echo $record[4]['title']; ?></a></span></h2>
+			
+				<h2>TOP 5</h2>
+                <h2><span><a href="./blog.php?number=4"><?php echo $hot[4]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
+                    <span class="date"><?php echo $hot[4]['date']; ?></span><span class="noscreen">,</span>
                   
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[4]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[4]['author']; ?>
+					<img src="<?php echo ShowAuthor($hot[4]['author']); ?>" id="me" alt="Yeah, it’s me!" />
+					Author:<?php echo $hot[4]['author']; ?>
 				</p>
 
-                <p><?php echo $POC[4];?></p>
+                <p><?php echo $HPOC[4];?></p>
 
-                <p class="btn-more box noprint"><strong><a href="./blog.php?number=4">Continue</a></strong></p>
+                <p class="btn-more box noprint"><strong><a href="./hotblog.php?number=4">Continue</a></strong></p>
             </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -182,7 +190,7 @@ include("mysql.inc.php");
                 <h3><span>About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it´s me!" />
+                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it’s me!" />
                     <strong><? echo $id; ?></strong><br />
 					<? 
 						echo 'Gender:'.$gender.'<br/>';
@@ -249,7 +257,7 @@ include("mysql.inc.php");
         <div id="top" class="noprint"><p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p></div>
         <hr class="noscreen" />
         
-        <p id="createdby">created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON´T REMOVE, PLEASE! --></p>
+        <p id="createdby">created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON’T REMOVE, PLEASE! --></p>
         <p id="copyright">&copy; 2007 <a href="mailto:my@mail.com">My Name</a></p>
     </div> <!-- /footer -->
 

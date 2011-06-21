@@ -50,7 +50,7 @@
 	
 	$n=0;
 	while($n<5){
-	
+		
 		$row = @mysql_fetch_row($result);
 		//echo $row[0]." ";
 		$sql = "SELECT photo_route FROM member where ID = '$row[0]'";
@@ -59,9 +59,41 @@
 		//echo $tmp[0].'<br>';
 		
 		$friend[$n]['id']=$row[0];
+		if($friend[$n]['id']==$id)
+			continue;
 		$friend[$n]['picture']=$tmp[0];	
 		//echo $row[0].'<br>';
 		$n++;
+	}
+	
+	
+	$sql = "SELECT * FROM article ORDER BY like_count DESC";
+	$result = mysql_query($sql);
+
+	$n=0;
+	while($n < 5){  	
+		$row = mysql_fetch_row($result);
+		$hot[$n]['id'] = $row[0];
+		$hot[$n]['author'] = $row[1];
+		$hot[$n]['class'] = $row[2];
+		$hot[$n]['region'] = $row[4];
+		$hot[$n]['date'] = $row[5];
+		$hot[$n]['title'] = $row[6];
+		$hot[$n]['content'] = $row[7];
+		$hot[$n]['like_count']= $row[8];
+		//echo $hot[$n]['like_count'].'<br/>';
+		$contenthot[$n] = str_replace("\n","<br/>",$row[7]);
+		//$POC[$n] = $row[7];
+		$n++;
+		//echo $row[6];
+	}	
+	
+	for($n=0;$n<5;$n++){
+		$HPOC[$n] = "";
+		$tmp[$n] = explode("\n",$hot[$n]['content']);   //´«¦æ
+		for($i=0;$i<10;$i++){
+			$HPOC[$n] = $HPOC[$n].$tmp[$n][$i].'<br/>';  //hot.php Part Of Content
+		}
 	}
 	
 ?>

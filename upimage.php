@@ -39,7 +39,7 @@ include("mysql.inc.php");
 			
 			
 			$thumb_w = 70;
-			$thumb_h = 70;
+			$thumb_h = 90;
 			
 			// 假設要長寬不超過90
 			/*if($src_w > $src_h){
