@@ -194,11 +194,12 @@ include("mysql.inc.php");
                 <h3 ><span>My Friends</span></h3>
 
                 <ul id="category">
-                    <li id="category-active"><a href="#">Selected category</a></li> <!-- Active -->
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">Category</a></li>
+                    <!--<li id="category-active"><a href="#">Selected category</a></li> >--><!-- Active -->			
+					<li><img src="<? echo $friend[0]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[0]['id']; ?> </li>
+					<li><img src="<? echo $friend[1]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[1]['id']; ?> </li>
+					<li><img src="<? echo $friend[2]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[2]['id']; ?> </li>
+                    <li><img src="<? echo $friend[3]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[3]['id']; ?> </li>
+                    <li><img src="<? echo $friend[4]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[4]['id']; ?> </li>
                 </ul>
 
                 <hr class="noscreen" />

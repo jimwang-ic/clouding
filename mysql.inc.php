@@ -42,11 +42,18 @@
 	$result = mysql_query($sql);
 	
 	$n=0;
-	while($n < 5){
+	while($n<5){
 	
 		$row = @mysql_fetch_row($result);
-		$friend[$n] = $row[1];
-		echo $$friend[$n];
+		//echo $row[0]." ";
+		$sql = "SELECT photo_route FROM member where ID = '$row[0]'";
+		$result1 = mysql_query($sql);
+		$tmp = @mysql_fetch_row($result1);
+		//echo $tmp[0].'<br>';
+		
+		$friend[$n]['id']=$row[0];
+		$friend[$n]['picture']=$tmp[0];	
+		//echo $row[0].'<br>';
 		$n++;
 	}
 	
