@@ -75,7 +75,7 @@ function LikeAction(ID)
                 <li><a href="./hot.php">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./AddGroup.html">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
-				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
+				<li><a href="./logout.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
