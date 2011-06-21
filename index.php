@@ -85,7 +85,7 @@ include("mysql.inc.php");
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[0]['author']); ?>" id="me" alt="Yeah, it´s me!" />
 					Author:<?php echo $record[1]['author']; ?>
 				</p>
                 <p><?php echo $POC[0];?></p>
@@ -122,8 +122,8 @@ include("mysql.inc.php");
                 </p>
 
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[1]['author']; ?>
+					<img src="<?php echo ShowAuthor($record[2]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[2]['author']; ?>
 				</p>
                  <p><?php echo $POC[2];?></p>
 
@@ -141,8 +141,8 @@ include("mysql.inc.php");
                 </p>
 
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[1]['author']; ?>
+					<img src="<?php echo ShowAuthor($record[3]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[3]['author']; ?>
 				</p>
                 <p><?php echo $POC[3];?></p>
 
@@ -159,8 +159,8 @@ include("mysql.inc.php");
                   
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-					Author:<?php echo $record[1]['author']; ?>
+					<img src="<?php echo ShowAuthor($record[4]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[4]['author']; ?>
 				</p>
 
                 <p><?php echo $POC[4];?></p>
