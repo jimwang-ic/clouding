@@ -72,7 +72,7 @@ function LikeAction(ID)
             <h3 class="noscreen">Navigation</h3>
             <ul class="box">
                 <li id="active"><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
-                <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
+                <li><a href="./hot.php">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./AddGroup.html">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>

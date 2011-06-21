@@ -68,6 +68,7 @@ $class = array("$name[$c_0]","$name[$c_1]","$name[$c_2]");
 
 
 <?php
+$id = $_SESSION['username'];
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_0]' ORDER BY score DESC";
 
@@ -79,7 +80,7 @@ $ID_1 = $row[0];
 
 print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_1."'".">".$row[6]."</a>"."<h2/><br/>";
 
-$sql = "SELECT * FROM article WHERE class = '$name[$c_1]' ORDER BY score DESC";
+$sql = "SELECT DISTINCT * FROM article WHERE class = '$name[$c_1]'";
 
 $result = mysql_query($sql); 
 
