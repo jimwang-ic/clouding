@@ -2,9 +2,9 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-mysql_connect("140.119.164.193:3306","root","root");
-//mysql_query("SET NAMES utf8");	
-mysql_select_db("foodbook");
+
+include("mysql_connect.inc.php");
+
 
 $myTable = 'article';
 
@@ -30,7 +30,7 @@ if ($errMsg ==''){
   //設定使用台北時區
   date_default_timezone_set('Asia/Taipei');
   //將姓名、留言、目前的日期時間寫入資料庫
-
+	
   $sql=sprintf("INSERT $myTable (author,class,score,region,date,title,content)
                 VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s')",
                $name,

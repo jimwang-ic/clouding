@@ -2,8 +2,8 @@
 
 
 	include("mysql_connect.inc.php");
-	$id = $_SESSION['username'];
-	//$id = 'ww2308';                   
+	//$id = $_SESSION['username'];
+	$id = 'ww2308';                   
 
 
 	/*$sql = "SELECT friendID FROM relationship where ID = '$id'";
@@ -30,6 +30,9 @@
 		$n++;
 		//echo $row[6];
 	}	
+	
+
+	
 	
 	for($n=0;$n<5;$n++){
 		$POC[$n] = "";

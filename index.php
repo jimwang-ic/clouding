@@ -2,7 +2,9 @@
 if (!isset($_SESSION)) {
     session_start();
 }
+include("function.php");
 include("mysql.inc.php");
+
 
 ?>
 <!--上方語法為啟用session，此語法要放在網頁最前方-->
@@ -51,8 +53,7 @@ include("mysql.inc.php");
             <p><em>Quick links: <a href="#content">content</a>, <a href="#tabs">navigation</a>, <a href="#search">search</a>.</em></p>
             <hr />
         </div>
-		
-    
+
     </div> <!-- /header -->
 
      <!-- Main menu (tabs) -->
@@ -80,6 +81,10 @@ include("mysql.inc.php");
 
                 <h2><span><a href="./blog.php?number=0"><?php echo $record[0]['title']; ?></a></span></h2>             
 
+				<p>
+					<img src="<? ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+				</p>
+
                 <p class="info noprint">
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
@@ -98,7 +103,7 @@ include("mysql.inc.php");
                     <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
                     
                 </p>
-
+				
                  <p><?php echo $POC[1];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./blog.php?number=1">Continue</a></strong></p>

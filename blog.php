@@ -63,17 +63,6 @@ function LikeAction(ID)
             <hr />
         </div>
 
-        <!-- Search -->
-        <div id="search" class="noprint">
-            <form action="" method="get">
-                <fieldset><legend>Search</legend>
-                    <label><span class="noscreen">Find:</span>
-                    <span id="search-input-out"><input type="text" name="" id="search-input" size="30" /></span></label>
-                    <input type="image" src="design/search_submit.gif" id="search-submit" value="OK" />
-                </fieldset>
-            </form>
-        </div> <!-- /search -->
-
     </div> <!-- /header -->
 
      <!-- Main menu (tabs) -->
@@ -161,6 +150,19 @@ function LikeAction(ID)
 
                 <hr class="noscreen" />-->
                 <!-- Archive -->
+				<h3 ><span>My Friends</span></h3>
+
+                <ul id="category">
+                    <!--<li id="category-active"><a href="#">Selected category</a></li> >--><!-- Active -->			
+					<li><img src="<? echo $friend[0]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[0]['id']; ?> </li>
+					<li><img src="<? echo $friend[1]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[1]['id']; ?> </li>
+					<li><img src="<? echo $friend[2]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[2]['id']; ?> </li>
+                    <li><img src="<? echo $friend[3]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[3]['id']; ?> </li>
+                    <li><img src="<? echo $friend[4]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[4]['id']; ?> </li>
+                </ul>
+				
+				<hr class="noscreen" />
+				
                 <h3><span>Archive</span></h3>
 
                 <ul id="archive">
@@ -181,18 +183,9 @@ function LikeAction(ID)
 
                 <hr class="noscreen" />
 
-                <!-- Links -->
-                <h3><span>Links</span></h3>
+          
 
-                <ul id="links">
-                    <li><a href="#">Something</a></li>
-                    <li><a href="#">Something</a></li>
-                    <li><a href="#">Something</a></li>
-                    <li><a href="#">Something</a></li>
-                    <li><a href="#">Something</a></li>
-                </ul>
-
-                <hr class="noscreen" />
+               
             
             </div> <!-- /col-in -->
         </div> <!-- /col -->

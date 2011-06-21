@@ -8,8 +8,9 @@ include("mysql_connect.inc.php");
 
 $id = $_SESSION['username'];
 
+$sql = "SELECT * FROM " 
 
-
+/******************/
 include("mysql_connect.inc.php");
 
 $id = $_SESSION['username'];
