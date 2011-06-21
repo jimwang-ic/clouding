@@ -1,24 +1,12 @@
-<html> 
-<head><title>Form A Group</title>
-	
-<script type="text/javascript">
+<?php
+//print_r($_REQUEST['data'][0]);
 
-function PrintOut(){
-	document.getElementById("FriendList").innerHTML += "<p>" + document.getElementById("textfield").value + "<p/";
-	document.getElementById("textfield").value = "" ;
+//echo $_POST['data'][0];
+
+Foreach($_POST['data'] as $FriendID){
+	
+	echo "$FriendID<br/>";
 }
+//print_r($result = json_decode($_REQUEST['data']));
 
-</script>
-
-</head>
-
-<body>
-	<form>
-		請輸入朋友名稱： <input id="textfield" type="text">
-		<input type="button" value="ADD" onclick="PrintOut()">
-	</form>
-	
-	<div id="FriendList"></div>
-</body>
-
-</html>
+?>
