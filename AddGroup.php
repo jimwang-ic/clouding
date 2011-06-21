@@ -82,7 +82,44 @@ while($m>=0){
 	 $m--;
 }
 
- //print_r($rank);
+ if($q ==0){	
+
+    $n = 0;
+    $t_0 = 0;
+    $t_1 = 0;
+    $t_2 = 0;
+    $s = $score_total['0'];
+while(++$n<10){
+  if($score_total[$n]>$s){
+     $s = $score_total[$n];
+	 $t_0 = $n;
+  } 
+}
+$score_total[$t_0] = 0;
+
+$n = 0;
+$s = $score_total['0'];
+while(++$n<10){
+  if($score_total[$n]>$s){
+     $s = $score_total[$n];
+	 $t_1 = $n;
+  } 
+}
+$score_total[$t_1] = 0;
+
+$n = 0;
+$s = $score_total['0'];
+while(++$n<10){
+  if($score_total[$n]>$s){
+     $s = $score_total[$n];
+	 $t_2 = $n;
+  }
+}
+$score_total[$t_2] = 0;
+
+    $f_rank = array("$t_0","$t_1","$t_2");
+//print_r($f_rank);
+}	
 
 if($q ==1){	
     $r = $rank[$q++];
@@ -114,7 +151,7 @@ while (++$q<$count){
 	}
 }
     $f_rank = array("$rank[0]","$rank[$t_0]","$rank[$t_1]");
-    print_r($f_rank);
+    //print_r($f_rank);
 }	
 	
 if($q ==2){	
@@ -129,16 +166,50 @@ while (++$q<$count){
 	}	
     }
     $f_rank = array("$rank[0]","$rank[1]","$rank[$t]");
-    print_r($f_rank);
+    //print_r($f_rank);
 }
 
 if($q==3){
     $f_rank = array("$rank[0]","$rank[1]","$rank[2]");
-    print_r($f_rank);
+    //print_r($f_rank);
 }
 
 
+$name = array("ch","jpn","kor","south","ds","us","west","hotpot","bbq","nm");
+$c_0 = $f_rank[0];
+$c_1 = $f_rank[1];
+$c_2 = $f_rank[2];
+$class = array("$name[$c_0]","$name[$c_1]","$name[$c_2]");
+
+//print_r($class);
+
+$sql = "SELECT * FROM article WHERE class = '$name[$c_0]' ORDER BY score DESC";
+
+$result = mysql_query($sql); 
+
+$row = mysql_fetch_row($result);
+
+$ID_1 = $row[0];
+
+print "<a href='./RecommendPage.php?number=".$ID_1."'".">".$row[6]."</a>"."<br/>";
+
+$sql = "SELECT * FROM article WHERE class = '$name[$c_1]' ORDER BY score DESC";
+
+$result = mysql_query($sql); 
+
+$row = mysql_fetch_row($result);
+
+$ID_2 = $row[0];
+
+print "<a href='./RecommendPage.php?number=".$ID_2."'".">".$row[6]."</a>"."<br/>";
+
+$sql = "SELECT * FROM article WHERE class = '$name[$c_2]' ORDER BY score DESC";
+
+$result = mysql_query($sql); 
+
+$row = mysql_fetch_row($result);
+
+$ID_3 = $row[0];
+
+print "<a href='./RecommendPage.php?number=".$ID_3."'".">".$row[6]."</a>"."<br/>";
 ?><br><br>
-<?php 
-    //print_r($score_total);
-?>

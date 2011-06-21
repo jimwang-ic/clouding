@@ -18,7 +18,7 @@ $row = mysql_fetch_array($result);
 $id = $row[0];
 
 
-/**** query article's class & like count ***/
+/**** query article's class & like count & article score***/
 $sql = "SELECT * FROM article WHERE author = '$id' && ID = '$q'";
 
 $result = mysql_query($sql);
@@ -30,8 +30,7 @@ $classname = $row[2];
 
 $new_like_count = $row[8] + 1;
 
-
-/************/
+$article_score = $row[3];
 
 /**Update like count**/ 
 
@@ -45,6 +44,7 @@ echo $new_like_count." 個人說很讚";
 //echo "<p>".$row[2]."<p/>";
 
 
+
 /**query interest from use id  and add to the database **/
 $sql = "SELECT * FROM interest WHERE ID = '$id'";
 
@@ -55,7 +55,10 @@ $row = mysql_fetch_array($result);
 //echo "<p>".$row[$classname]."<p/>";
 
 //echo "<p>".$row[3]."<p/>";
-$newscore = $row[$classname] + 1;
+if($classname > 50 )
+	$newscore = $row[$classname] + 1;
+else 
+	$newscore = $row[$classname] - 1;	
 //echo "<p>".$newscore."<p/>";
 //echo "<p>".$classname."test"."<p/>";
 
