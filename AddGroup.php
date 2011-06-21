@@ -137,6 +137,7 @@ if($q==3){
     print_r($f_rank);
 }
 
+
 ?><br><br>
 <?php 
     //print_r($score_total);
