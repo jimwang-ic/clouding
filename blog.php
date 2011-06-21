@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("mysql.inc.php");
+include("function.php");
 ?>
 
 <script type="text/javascript">
@@ -74,6 +75,7 @@ function LikeAction(ID)
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./AddGroup.php">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
+				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
@@ -94,6 +96,10 @@ function LikeAction(ID)
 				<p class="info noprint">
                     <span class="date"><?php echo $record[$_GET['number']]['date']; ?></span><span class="noscreen">,</span>
                 </p>
+				<p class="info noprint">
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[1]['author']; ?>
+				</p>
                 <?php
 						$aritcleID=$record[$_GET['number']]['id'];
 						print "<input type='button' name='Like' value='Like' onClick=LikeAction('$aritcleID')>";
