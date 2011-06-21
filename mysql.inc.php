@@ -1,10 +1,17 @@
 <?php
 
+
 	include("mysql_connect.inc.php");
 	$id = $_SESSION['username'];
 	//$id = 'ww2308';                   
 
-	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
+
+	/*$sql = "SELECT friendID FROM relationship where ID = '$id'";
+	$result = mysql_query($sql);*/
+	
+	
+	$sql = "SELECT * FROM article A1,relationship A2 WHERE A1.author = A2.FriendID && A2.ID = '$id' ORDER BY A1.ID DESC";
+				
 	$result = mysql_query($sql);
 
 	$n=0;
@@ -21,6 +28,7 @@
 		$content[$n] = str_replace("\n","<br/>",$row[7]);
 		//$POC[$n] = $row[7];
 		$n++;
+		//echo $row[6];
 	}	
 	
 	for($n=0;$n<5;$n++){
