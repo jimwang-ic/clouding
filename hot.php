@@ -21,7 +21,7 @@ include("mysql.inc.php");
     <meta name="description" content="Food" />
     <meta name="keywords" content="Food" />
     
-    <link rel="index" href="./" title="Home" />
+    <link rel="index" href="./index.php" title="Home" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="./css/main.css" />
     <link rel="stylesheet" media="print" type="text/css" href="./css/print.css" />
     <link rel="stylesheet" media="aural" type="text/css" href="./css/aural.css" />
@@ -64,7 +64,7 @@ include("mysql.inc.php");
                 <li id="active"><a href="./hot.php">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./AddGroup.html">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
-				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
+				<li><a href="./logout.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
@@ -80,7 +80,7 @@ include("mysql.inc.php");
             <!-- Article -->
             <div class="article">
 				<h2>TOP 1</h2>
-                <h2><span><a href="./blog.php?number=0"><?php echo $hot[0]['title']; ?></a></span></h2>             
+                <h2><span><a href="./hotblog.php?number=0"><?php echo $hot[0]['title']; ?></a></span></h2>             
                 <p class="info noprint">
                     <span class="date"><?php echo $hot[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
@@ -99,7 +99,7 @@ include("mysql.inc.php");
             <div class="article">
 			
 				<h2>TOP 2</h2>
-                <h2><span><a href="./blog.php?number=1"><?php echo $hot[1]['title']; ?></a></span></h2>
+                <h2><span><a href="./hotblog.php?number=1"><?php echo $hot[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $hot[1]['date']; ?></span><span class="noscreen">,</span>   
                 </p>
@@ -119,7 +119,7 @@ include("mysql.inc.php");
             <div class="article">
 			
 				<h2>TOP 3</h2>
-                <h2><span><a href="./blog.php?number=2"><?php echo $hot[2]['title']; ?></a></span></h2>
+                <h2><span><a href="./hotblog.php?number=2"><?php echo $hot[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $hot[2]['date']; ?></span><span class="noscreen">,</span>
                    
@@ -140,7 +140,7 @@ include("mysql.inc.php");
             <div class="article">
 			
 				<h2>TOP 4</h2>
-                <h2><span><a href="./blog.php?number=3"><?php echo $hot[3]['title']; ?></a></span></h2>
+                <h2><span><a href="./hotblog.php?number=3"><?php echo $hot[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $hot[3]['date']; ?></span><span class="noscreen">,</span>
                   
@@ -161,7 +161,7 @@ include("mysql.inc.php");
             <div class="article">
 			
 				<h2>TOP 5</h2>
-                <h2><span><a href="./blog.php?number=4"><?php echo $hot[4]['title']; ?></a></span></h2>
+                <h2><span><a href="./hotblog.php?number=4"><?php echo $hot[4]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $hot[4]['date']; ?></span><span class="noscreen">,</span>
                   
