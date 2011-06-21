@@ -1,8 +1,8 @@
 <?php
 
 	include("mysql_connect.inc.php");
-	//$id = $_SESSION['username'];
-	$id = 'ww2308';                   
+	$id = $_SESSION['username'];
+	//$id = 'ww2308';                   
 
 	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
 	$result = mysql_query($sql);

@@ -28,7 +28,7 @@ include("mysql.inc.php");
 </head>
 
 <body id="www-url-cz">
- 
+
 <!-- Main -->
 <div id="main" class="box">
 
@@ -58,6 +58,7 @@ include("mysql.inc.php");
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./AddGroup.php">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
+				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
@@ -74,15 +75,13 @@ include("mysql.inc.php");
             <div class="article">
 
                 <h2><span><a href="./blog.php?number=0"><?php echo $record[0]['title']; ?></a></span></h2>             
-
-				<p>
-					<img src="<? ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
-				</p>
-
                 <p class="info noprint">
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
-
+				<p class="info noprint">
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[1]['author']; ?>
+				</p>
                 <p><?php echo $POC[0];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./blog.php?number=0">Continue</a></strong></p>
@@ -94,9 +93,12 @@ include("mysql.inc.php");
             <div class="article">
                 <h2><span><a href="./blog.php?number=1"><?php echo $record[1]['title']; ?></a></span></h2>
                 <p class="info noprint">
-                    <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>
-                    
+                    <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>   
                 </p>
+				<p class="info noprint">
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[1]['author']; ?>
+				</p>
 				
                  <p><?php echo $POC[1];?></p>
 
@@ -110,11 +112,13 @@ include("mysql.inc.php");
                 <h2><span><a href="./blog.php?number=2"><?php echo $record[2]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[2]['date']; ?></span><span class="noscreen">,</span>
-                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>
+                   
                 </p>
 
+				<p class="info noprint">
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[1]['author']; ?>
+				</p>
                  <p><?php echo $POC[2];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./blog.php?number=2">Continue</a></strong></p>
@@ -127,11 +131,13 @@ include("mysql.inc.php");
                 <h2><span><a href="./blog.php?number=3"><?php echo $record[3]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[3]['date']; ?></span><span class="noscreen">,</span>
-                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>
+                  
                 </p>
 
+				<p class="info noprint">
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[1]['author']; ?>
+				</p>
                 <p><?php echo $POC[3];?></p>
 
                 <p class="btn-more box noprint"><strong><a href="./blog.php?number=3">>Continue</a></strong></p>
@@ -144,10 +150,12 @@ include("mysql.inc.php");
                 <h2><span><a href="./blog.php?number=4"><?php echo $record[4]['title']; ?></a></span></h2>
                 <p class="info noprint">
                     <span class="date"><?php echo $record[4]['date']; ?></span><span class="noscreen">,</span>
-                    <span class="cat"><a href="#">Category</a></span><span class="noscreen">,</span>
-                    <span class="user"><a href="#">My name</a></span><span class="noscreen">,</span>
-                    <span class="comments"><a href="#">Comments</a></span>
+                  
                 </p>
+				<p class="info noprint">
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					Author:<?php echo $record[1]['author']; ?>
+				</p>
 
                 <p><?php echo $POC[4];?></p>
 
@@ -165,7 +173,7 @@ include("mysql.inc.php");
             <div id="col-in">
 
                 <!-- About Me -->
-                <h3><span><a href="#">About Me</a></span></h3>
+                <h3><span>About Me</a></span></h3>
 
                 <div id="about-me">
                     <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it´s me!" />
