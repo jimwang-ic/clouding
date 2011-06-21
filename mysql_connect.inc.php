@@ -6,7 +6,7 @@
 	$db_server = "140.119.164.193:3306";
 	//資料庫名稱
 
-	$db_name = "Foodbook";
+	$db_name = "foodbook";
 
 	$db_user = "root";
 
