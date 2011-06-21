@@ -115,18 +115,7 @@ function LikeAction(ID)
 				</p>
 
 				<p>
-				<?php
-						$aritcleID=$record[$_GET['number']]['id'];
-						print "<input type='button' name='Like2' value='Like' onClick=LikeAction('$aritcleID')>";
-				?>
-				</p>
-            </div> <!-- /article -->
-				<p class="info noprint">
-                    <div id="people_number1"><span><?php echo $record[$_GET['number']]['like_count'];?> 個人都說讚</span></div>
-                </p>
-                <p>
-				<?php echo $content[$_GET['number']]; ?>
-				</p>
+				
  
 			</div> <!-- /article -->
             <hr class="noscreen" />
