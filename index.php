@@ -64,7 +64,6 @@ include("mysql.inc.php");
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="./AddGroup.html">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
-                <li><a href="./AddGroup.php">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./login.php">Logout<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
