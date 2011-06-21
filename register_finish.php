@@ -18,6 +18,8 @@ if($id != null && $pw != null && $pw2 != null && $pw == $pw2)
         if(mysql_query($sql))
         {
                 echo '新增成功!';
+				$sql = "insert into relationship(ID, friendID) values ('$id', '$id')";
+				mysql_query($sql);
                 echo '<meta http-equiv=REFRESH CONTENT=2;url=login.php>';
         }
         else
