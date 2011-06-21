@@ -9,7 +9,13 @@ $q = $_GET["q"];
 //echo $q;
 include("mysql_connect.inc.php");
 
-$id = $_SESSION['username'];
+$sql = "SELECT author FROM article WHERE ID = '$q'";
+
+$result = mysql_query($sql);
+
+$row = mysql_fetch_array($result);
+
+$id = $row[0];
 
 
 /**** query article's class & like count ***/
@@ -20,6 +26,7 @@ $result = mysql_query($sql);
 $row = mysql_fetch_array($result);
 
 $classname = $row[2];
+//echo "<p>".$id."<p/>";
 
 $new_like_count = $row[8] + 1;
 
@@ -48,7 +55,7 @@ $row = mysql_fetch_array($result);
 //echo "<p>".$row[$classname]."<p/>";
 
 //echo "<p>".$row[3]."<p/>";
-$newscore = $row[$classname] + 3;
+$newscore = $row[$classname] + 1;
 //echo "<p>".$newscore."<p/>";
 //echo "<p>".$classname."test"."<p/>";
 

@@ -20,4 +20,6 @@ foreach ($row as $key => $val) {
     echo "Attributes[" . $key . "] = " . $val . "<br />";
 }
 
+
+
 ?>
