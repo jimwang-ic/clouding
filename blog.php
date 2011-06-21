@@ -84,6 +84,7 @@ function LikeAction(ID)
                 <li id="active"><a href="./index.php">Home<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="#">Hot<span class="tab-l"></span><span class="tab-r"></span></a></li>
 				<li><a href="./PostBLog.html">PostBlog<span class="tab-l"></span><span class="tab-r"></span></a></li>
+				<li><a href="./AddGroup.php">Group<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>
 
         <hr class="noscreen" />
@@ -137,23 +138,28 @@ function LikeAction(ID)
 					?>
                   
                     <a href="upimage.php">Upload Myphoto</a></p>
+					<br/>
+                    <div id="add_friend">
+                    <form method="post" action="addFriend.php" name="addFriend">
+                    	Add Friend : <input name="FriendID"><br />
+                    </form>
+                    </div>
                 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />
 
                 <!-- Category -->
-                <h3 ><span>Category</span></h3>
+                <!--<h3 ><span>Category</span></h3>
 
                 <ul id="category">
-                    <li id="category-active"><a href="#">Selected category</a></li> <!-- Active -->
-                    <li><a href="#">Category</a></li>
+                    <li id="category-active"><a href="#">Selected category</a></li> --><!-- Active -->
+                    <!--<li><a href="#">Category</a></li>
                     <li><a href="#">Category</a></li>
                     <li><a href="#">Category</a></li>
                     <li><a href="#">Category</a></li>
                 </ul>
 
-                <hr class="noscreen" />
-
+                <hr class="noscreen" />-->
                 <!-- Archive -->
                 <h3><span>Archive</span></h3>
 

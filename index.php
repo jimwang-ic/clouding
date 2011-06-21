@@ -189,6 +189,7 @@ include("mysql.inc.php");
 
                 <hr class="noscreen" />
 
+
                 <!-- Category -->
                 <h3 ><span>My Friends</span></h3>
 
