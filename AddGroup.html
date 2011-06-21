@@ -1,6 +1,11 @@
 <html> 
 <head><title>Form A Group</title>
 
+ 	<link rel="index" href="./" title="Home" />
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="./css/print.css" />
+    <link rel="stylesheet" media="aural" type="text/css" href="./css/aural.css" />
+
 <script src="Jquery.js"></script>
 <script type="text/javascript">
 
@@ -39,15 +44,15 @@ $(document).ready(function(){
 
 </head>
 
-<body>
+<body id = "www-url-cz">
 	<form>
-		請輸入朋友名稱： <input id="textfield" type="text">
+		<h3>請輸入朋友名稱 : <input id="textfield" type="text"> 
 		<input type="button" value="ADD" onclick="PrintOut()">
 	</form>
 	<div id="FriendList"></div>
 	<form>
 		<!- Convert to JSON : <input type="button" value="execute" onclick="ParsetoJSON()">
-		推薦美食 : <input type="button" value="GO!!" id="Jquerybtn">
+		推薦美食 : <input type="button" value="GO!!" id="Jquerybtn"><h3/>
 	</form>
 	<div id="JSON"></div>
 </body>

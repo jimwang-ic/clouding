@@ -97,7 +97,7 @@ function LikeAction(ID)
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[0]['author']); ?>" id="me" alt="Yeah, it´s me!" />
 					Author:<?php echo $record[0]['author']; ?>
 				</p>
                 <?php

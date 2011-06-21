@@ -191,7 +191,7 @@ $row = mysql_fetch_row($result);
 
 $ID_1 = $row[0];
 
-print "<a href='./RecommendPage.php?number=".$ID_1."'".">".$row[6]."</a>"."<br/>";
+print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_1."'".">".$row[6]."</a>"."<h2/><br/>";
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_1]' ORDER BY score DESC";
 
@@ -201,7 +201,7 @@ $row = mysql_fetch_row($result);
 
 $ID_2 = $row[0];
 
-print "<a href='./RecommendPage.php?number=".$ID_2."'".">".$row[6]."</a>"."<br/>";
+print "<h2><font size='5' face='arial' color='red'>Rank 2 :<font/><a href='./RecommendPage.php?number=".$ID_2."'".">".$row[6]."</a>"."<h2/><br/>";
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_2]' ORDER BY score DESC";
 
@@ -211,5 +211,6 @@ $row = mysql_fetch_row($result);
 
 $ID_3 = $row[0];
 
-print "<a href='./RecommendPage.php?number=".$ID_3."'".">".$row[6]."</a>"."<br/>";
+print "<h2><font size='5' face='arial' color='red'>Rank 3 :<font/><a href='./RecommendPage.php?number=".$ID_3."'".">".$row[6]."</a>"."<h2/><br/>";
+
 ?><br><br>
