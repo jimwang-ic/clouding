@@ -190,7 +190,7 @@ include("mysql.inc.php");
                 <hr class="noscreen" />
 
                 <!-- Category -->
-                <h3 ><span>Category</span></h3>
+                <h3 ><span>My Friends</span></h3>
 
                 <ul id="category">
                     <li id="category-active"><a href="#">Selected category</a></li> <!-- Active -->

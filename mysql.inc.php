@@ -1,8 +1,8 @@
 <?php
 
 	include("mysql_connect.inc.php");
-	//$id = $_SESSION['username'];
-	$id = 'ww2308';                   
+	$id = $_SESSION['username'];
+	//$id = 'ww2308';                   
 
 	$sql = "SELECT * FROM article where author = '$id' ORDER BY ID DESC";	
 	$result = mysql_query($sql);
@@ -37,6 +37,17 @@
 	$gender = $row[1];
 	$region = $row[2];
 	$photo_route = $row[4];
-
+	
+	$sql = "SELECT friendID FROM relationship where ID = '$id'";
+	$result = mysql_query($sql);
+	
+	$n=0;
+	while($n < 5){
+	
+		$row = @mysql_fetch_row($result);
+		$friend[$n] = $row[1];
+		echo $$friend[$n];
+		$n++;
+	}
 	
 ?>
