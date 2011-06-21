@@ -2,12 +2,8 @@
 
 
 	include("mysql_connect.inc.php");
-	//$id = $_SESSION['username'];
-	$id = 'ww2308';                   
-
-
-	/*$sql = "SELECT friendID FROM relationship where ID = '$id'";
-	$result = mysql_query($sql);*/
+	$id = $_SESSION['username'];
+	//$id = 'ww2308';                   
 	
 	
 	$sql = "SELECT * FROM article A1,relationship A2 WHERE A1.author = A2.FriendID && A2.ID = '$id' ORDER BY A1.ID DESC";

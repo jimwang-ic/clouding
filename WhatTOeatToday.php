@@ -8,24 +8,16 @@ include("mysql_connect.inc.php");
 
 $id = $_SESSION['username'];
 
-$sql = "SELECT * FROM " 
-
-/******************/
-include("mysql_connect.inc.php");
-
-$id = $_SESSION['username'];
-
-$sql = "SELECT friendID FROM relationship where ID = '$id'";
+$sql = "SELECT * FROM interest WHERE ID = '$id'";
 
 $result = mysql_query($sql);
 
-echo "<h3>$id's friend list<h3/>" ;
-echo "======================================<br/>";
+$row = mysql_fetch_row($result);
+ 
+sort($row);
 
-while ($row = mysql_fetch_row($result)){
-	echo "<p>$row[0]<p/>";
+foreach ($row as $key => $val) {
+    echo "Attributes[" . $key . "] = " . $val . "<br />";
 }
-
-
 
 ?>
