@@ -1,5 +1,8 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
 include("mysql_connect.inc.php");
 
 $n = 0;
@@ -183,6 +186,9 @@ $class = array("$name[$c_0]","$name[$c_1]","$name[$c_2]");
 
 //print_r($class);
 
+$id = $_SESSION['username'];
+
+
 $sql = "SELECT * FROM article WHERE class = '$name[$c_0]' ORDER BY score DESC";
 
 $result = mysql_query($sql); 
@@ -190,18 +196,19 @@ $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 
 $ID_1 = $row[0];
+$Title_1 = $row[6];
 
-print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_1."'".">".$row[6]."</a>"."<h2/><br/>";
+print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_1."'".">".$Title_1 ."</a>"."<h2/><br/>";
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_1]' ORDER BY score DESC";
 
 $result = mysql_query($sql); 
 
 $row = mysql_fetch_row($result);
-
 $ID_2 = $row[0];
+$Title_2 = $row[6];
 
-print "<h2><font size='5' face='arial' color='red'>Rank 2 :<font/><a href='./RecommendPage.php?number=".$ID_2."'".">".$row[6]."</a>"."<h2/><br/>";
+print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_2."'".">".$Title_2 ."</a>"."<h2/><br/>";
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_2]' ORDER BY score DESC";
 
@@ -210,7 +217,8 @@ $result = mysql_query($sql);
 $row = mysql_fetch_row($result);
 
 $ID_3 = $row[0];
+$Title_3 = $row[6];
 
-print "<h2><font size='5' face='arial' color='red'>Rank 3 :<font/><a href='./RecommendPage.php?number=".$ID_3."'".">".$row[6]."</a>"."<h2/><br/>";
+print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_3."'".">".$Title_3 ."</a>"."<h2/><br/>";
 
 ?><br><br>

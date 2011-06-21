@@ -55,13 +55,14 @@ $row = mysql_fetch_array($result);
 //echo "<p>".$row[$classname]."<p/>";
 
 //echo "<p>".$row[3]."<p/>";
-if($classname > 50 )
+if($article_score > 50 )
 	$newscore = $row[$classname] + 1;
 else 
 	$newscore = $row[$classname] - 1;	
 //echo "<p>".$newscore."<p/>";
 //echo "<p>".$classname."test"."<p/>";
 
+$id = $_SESSION['username'];
 
 $sql = "UPDATE interest SET $classname = '$newscore' WHERE ID = '$id'";
 mysql_query($sql);

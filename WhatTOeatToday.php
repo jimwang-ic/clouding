@@ -68,36 +68,53 @@ $class = array("$name[$c_0]","$name[$c_1]","$name[$c_2]");
 
 
 <?php
+$id = $_SESSION['username'];
+
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_0]' ORDER BY score DESC";
 
 $result = mysql_query($sql); 
 
-$row = mysql_fetch_row($result);
-
-$ID_1 = $row[0];
-
-print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_1."'".">".$row[6]."</a>"."<h2/><br/>";
+while($row = mysql_fetch_row($result))
+{
+	if($row[1]!=$id)
+	{
+		$ID_1 = $row[0];
+		$Title_1 = $row[6];
+		break;
+	}
+}
+print "<h2><font size='5' face='arial' color='red'>Rank 1 :<font/><a href='./RecommendPage.php?number=".$ID_1."'".">".$Title_1 ."</a>"."<h2/><br/>";
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_1]' ORDER BY score DESC";
 
 $result = mysql_query($sql); 
 
-$row = mysql_fetch_row($result);
-
-$ID_2 = $row[0];
-
-print "<h2><font size='5' face='arial' color='red'>Rank 2 :<font/><a href='./RecommendPage.php?number=".$ID_2."'".">".$row[6]."</a>"."<h2/><br/>";
+while($row = mysql_fetch_row($result))
+{
+	if($row[1]!=$id)
+	{
+		$ID_2 = $row[0];
+		$Title_2 = $row[6];
+		break;
+	}
+}
+print "<h2><font size='5' face='arial' color='red'>Rank 2 :<font/><a href='./RecommendPage.php?number=".$ID_2."'".">".$Title_2 ."</a>"."<h2/><br/>";
 
 $sql = "SELECT * FROM article WHERE class = '$name[$c_2]' ORDER BY score DESC";
 
 $result = mysql_query($sql); 
 
-$row = mysql_fetch_row($result);
-
-$ID_3 = $row[0];
-
-print "<h2><font size='5' face='arial' color='red'>Rank 3 :<font/><a href='./RecommendPage.php?number=".$ID_3."'".">".$row[6]."</a>"."<h2/><br/>";
+while($row = mysql_fetch_row($result))
+{
+	if($row[1]!=$id)
+	{
+		$ID_3 = $row[0];
+		$Title_3 = $row[6];
+		break;
+	}
+}
+print "<h2><font size='5' face='arial' color='red'>Rank 3 :<font/><a href='./RecommendPage.php?number=".$ID_3."'".">".$Title_3 ."</a>"."<h2/><br/>";
 
 ?>
 </body>
