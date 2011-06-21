@@ -1,0 +1,55 @@
+<html> 
+<head><title>Form A Group</title>
+
+<script src="Jquery.js"></script>
+<script type="text/javascript">
+
+var FriendList = new Array();
+var count = 0;
+function PrintOut(){
+	FriendList[count] =  document.getElementById("textfield").value ;
+	document.getElementById("FriendList").innerHTML += "<P>" +FriendList[count] + "<p/";
+	document.getElementById("textfield").value = "" ;
+	count ++ ;
+}
+
+/*DON'T NEED TO PARSE*/
+function ParsetoJSON(){
+	var JSONText = JSON.stringify(FriendList);
+	var myObject = JSON.parse(JSONText);
+	document.getElementById("JSON").innerHTML = myObject[0]; 
+}
+
+$(document).ready(function(){
+	$('#Jquerybtn').click(function(event){
+		
+
+		$.post("AddGroup.php",{data : FriendList },
+		function(data){
+			document.getElementById("JSON").innerHTML = data;
+		},"text");
+		
+		
+	});
+
+});
+
+
+</script>
+
+</head>
+
+<body>
+	<form>
+		請輸入朋友名稱： <input id="textfield" type="text">
+		<input type="button" value="ADD" onclick="PrintOut()">
+	</form>
+	<div id="FriendList"></div>
+	<form>
+		<!- Convert to JSON : <input type="button" value="execute" onclick="ParsetoJSON()">
+		Test JQuery : <input type="button" value="execute" id="Jquerybtn">
+	</form>
+	<div id="JSON"></div>
+</body>
+
+</html>
