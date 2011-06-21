@@ -204,8 +204,8 @@ function LikeAction(ID)
         <div id="top" class="noprint"><p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p></div>
         <hr class="noscreen" />
         
-        <p id="createdby">created by <a href="http://www.nuvio.cz">Nuvio | Webdesign</a> <!-- DON’T REMOVE, PLEASE! --></p>
-        <p id="copyright">&copy; 2007 <a href="mailto:my@mail.com">My Name</a></p>
+        <p id="createdby">created by Danny Wang</a> <!-- DON’T REMOVE, PLEASE! --></p>
+        <p id="copyright">&copy; 2011 <a href="mailto:my@mail.com">foodbook</a></p>
     </div> <!-- /footer -->
 </div> <!-- /main -->
 </body>
