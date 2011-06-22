@@ -85,7 +85,7 @@ include("mysql.inc.php");
                     <span class="date"><?php echo $record[0]['date']; ?></span><span class="noscreen">,</span>
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[0]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[0]['author']); ?>" id="me" alt="" />
 					Author:<?php echo $record[1]['author']; ?>
 				</p>
                 <p><?php echo $POC[0];?></p>
@@ -102,7 +102,7 @@ include("mysql.inc.php");
                     <span class="date"><?php echo $record[1]['date']; ?></span><span class="noscreen">,</span>   
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[1]['author']); ?>" id="me" alt="" />
 					Author:<?php echo $record[1]['author']; ?>
 				</p>
 				
@@ -122,7 +122,7 @@ include("mysql.inc.php");
                 </p>
 
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[2]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[2]['author']); ?>" id="me" alt="" />
 					Author:<?php echo $record[2]['author']; ?>
 				</p>
                  <p><?php echo $POC[2];?></p>
@@ -141,7 +141,7 @@ include("mysql.inc.php");
                 </p>
 
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[3]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[3]['author']); ?>" id="me" alt="" />
 					Author:<?php echo $record[3]['author']; ?>
 				</p>
                 <p><?php echo $POC[3];?></p>
@@ -159,7 +159,7 @@ include("mysql.inc.php");
                   
                 </p>
 				<p class="info noprint">
-					<img src="<?php echo ShowAuthor($record[4]['author']); ?>" id="me" alt="Yeah, it´s me!" />
+					<img src="<?php echo ShowAuthor($record[4]['author']); ?>" id="me" alt="" />
 					Author:<?php echo $record[4]['author']; ?>
 				</p>
 
@@ -182,7 +182,16 @@ include("mysql.inc.php");
                 <h3><span>About Me</a></span></h3>
 
                 <div id="about-me">
-                    <p><img src="<? echo $photo_route; ?>" id="me" alt="Yeah, it´s me!" />
+                    <p>
+					<img src="<? 
+						if($photo_route==null){
+							echo './thumb/1.jpg';
+						}
+						else{
+							echo $photo_route;
+						}
+					?>"id="me" alt="" />
+					
                     <strong><? echo $id; ?></strong><br />
 					<? 
 						echo 'Gender:'.$gender.'<br/>';
@@ -206,11 +215,11 @@ include("mysql.inc.php");
 
                 <ul id="category">
                     <!--<li id="category-active"><a href="#">Selected category</a></li> >--><!-- Active -->			
-					<li><img src="<? echo $friend[0]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[0]['id']; ?> </li>
-					<li><img src="<? echo $friend[1]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[1]['id']; ?> </li>
-					<li><img src="<? echo $friend[2]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[2]['id']; ?> </li>
-                    <li><img src="<? echo $friend[3]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[3]['id']; ?> </li>
-                    <li><img src="<? echo $friend[4]['picture']; ?>" id="me" alt="my friend!" /><? echo " ".$friend[4]['id']; ?> </li>
+					<li><img src="<? echo $friend[0]['picture']; ?>" id="me" alt="" /><? echo " ".$friend[0]['id']; ?> </li>
+					<li><img src="<? echo $friend[1]['picture']; ?>" id="me" alt="" /><? echo " ".$friend[1]['id']; ?> </li>
+					<li><img src="<? echo $friend[2]['picture']; ?>" id="me" alt="" /><? echo " ".$friend[2]['id']; ?> </li>
+                    <li><img src="<? echo $friend[3]['picture']; ?>" id="me" alt="" /><? echo " ".$friend[3]['id']; ?> </li>
+                    <li><img src="<? echo $friend[4]['picture']; ?>" id="me" alt="" /><? echo " ".$friend[4]['id']; ?> </li>
                 </ul>
 
                 <hr class="noscreen" />
@@ -219,19 +228,20 @@ include("mysql.inc.php");
                 <h3><span>Archive</span></h3>
 
                 <ul id="archive">
-                   <li><a href="#">January 2007</a></li>
-                    <li><a href="#">December 2006</a></li>
-                    <li><a href="#">November 2006</a></li>
-                    <li><a href="#">October 2006</a></li>
-                    <li><a href="#">September 2006</a></li>
-                    <li id="archive-active"><a href="#">August 2006</a></li> <!-- Active -->
-                    <li><a href="#">July 2006</a></li>
-                    <li><a href="#">June 2006</a></li>
-                    <li><a href="#">May 2006</a></li>
-                    <li><a href="#">April 2006</a></li>
-                    <li><a href="#">March 2006</a></li>
-                    <li><a href="#">February 2006</a></li>
-                    <li><a href="#">January 2006</a></li>
+					<li id="archive-active"><a href="#">June 2011</a></li><!-- Active -->
+					<li><a href="#">May 2011</a></li>
+                    <li><a href="#">April 2011</a></li>
+                    <li><a href="#">March 2011</a></li>
+                    <li><a href="#">February 2011</a></li>
+                    <li><a href="#">January 2011</a></li>
+                    <li><a href="#">December 2010</a></li>
+                    <li><a href="#">November 2010</a></li>
+                    <li><a href="#">October 2010</a></li>
+                    <li><a href="#">September 2010</a></li>
+                    <li><a href="#">August 2010</a></li> 
+                    <li><a href="#">July 2010</a></li>
+                   
+                    
                 </ul>
 
                 <hr class="noscreen" />
@@ -249,8 +259,8 @@ include("mysql.inc.php");
         <div id="top" class="noprint"><p><span class="noscreen">Back on top</span> <a href="#header" title="Back on top ^">^<span></span></a></p></div>
         <hr class="noscreen" />
         
-        <p id="createdby">created by Danny Wang</a> <!-- DON´T REMOVE, PLEASE! --></p>
-        <p id="copyright">&copy; 2011 <a href="mailto:my@mail.com"></a></p>
+        <p id="createdby">created by Danny Wang/Liang/Benson</a> <!-- DON´T REMOVE, PLEASE! --></p>
+        <p id="copyright">&copy; 2011 <a href="mailto:my@mail.com">Foodbook</a></p>
     </div> <!-- /footer -->
 
 </div> <!-- /main -->
