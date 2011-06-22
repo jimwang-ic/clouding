@@ -1,14 +1,7 @@
 <?php
 session_start();
-<<<<<<< HEAD
+
 include("mysql.inc.php");
-=======
-
-include("mysql_connect.inc.php");
-//include("mysql.inc.php");
-$id = $_SESSION['username'];
-
->>>>>>> f57329ef6176936ea7ba59e0098198a98530865e
 ?>
 <!--上傳照片示例 upimage.php
 功能：上傳照片，顯示上傳人、上傳時間、圖片名稱、圖片大小、圖片說明。
