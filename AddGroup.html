@@ -6,6 +6,19 @@
     <link rel="stylesheet" media="print" type="text/css" href="./css/print.css" />
     <link rel="stylesheet" media="aural" type="text/css" href="./css/aural.css" />
 
+<style type="text/css">
+/*#loadingImg{
+position:absolute;
+width:300px;
+top:0px;
+left:50%;
+margin-left:-120px;
+text-align:center;
+padding:7px 0 0 0;
+font:bold 11px Arial, Helvetica, sans-serif;
+}*/
+</style>
+
 <script src="Jquery.js"></script>
 <script type="text/javascript">
 
@@ -34,7 +47,15 @@ $(document).ready(function(){
 			document.getElementById("JSON").innerHTML = data;
 		},"text");
 		
+		sleep(1);
 		
+	});
+	
+	$("#loadingImg").ajaxStart(function(){
+   		$(this).show();
+	});
+	$("#loadingImg").ajaxStop(function(){
+   		$(this).hide();
 	});
 
 });
@@ -54,6 +75,7 @@ $(document).ready(function(){
 		<!- Convert to JSON : <input type="button" value="execute" onclick="ParsetoJSON()">
 		推薦美食 : <input type="button" value="GO!!" id="Jquerybtn"><h3/>
 	</form>
+	<div id="loadingImg" style="display:none"><img src="./image/ajax-loader.gif"> loading...</div>
 	<div id="JSON"></div>
 </body>
 
