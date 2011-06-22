@@ -1,6 +1,9 @@
 <?php
 session_start();
-include("mysql.inc.php");
+include("mysql_connect.inc.php");
+//include("mysql.inc.php");
+$id = $_SESSION['username'];
+
 ?>
 <!--上傳照片示例 upimage.php
 功能：上傳照片，顯示上傳人、上傳時間、圖片名稱、圖片大小、圖片說明。
@@ -22,7 +25,9 @@ include("mysql.inc.php");
 </HEAD>
 <BODY BGCOLOR="#FFFFFF">
 	<?php
-		if ($upload){ //如果點擊"上傳"，則執行此php代碼部分
+		
+		if ($_GET['num']){ //如果點擊"上傳"，則執行此php代碼部分
+			
 			//var_dump($_FILES['picurl']);
 			//echo $src.'<br/>';
 			if ($picurl=="none"){
@@ -110,7 +115,7 @@ include("mysql.inc.php");
 	</tr>
 	<tr>
 		<td>
-			<form action="upimage.php" method="post" enctype="multipart/form-data" name="UL">
+			<form action="./upimage.php?num=1" method="post" enctype="multipart/form-data" name="UL">
 			<!--注意：這裡必須加上『enctype="multipart/form-data" 』，否則不會產生上傳動作-->
 			<div align="center" class="black10">圖片源文件：
 				<input type="file" name="picurl" size="15" accept="image/x-png,image/gif,image/jpeg">
